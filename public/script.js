@@ -1,6 +1,8 @@
 let canvas = document.getElementById('canvas')
 let context = canvas.getContext('2d')
 
+var io = io.connect('http://localhost:3000/')
+
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
@@ -9,6 +11,7 @@ let y
 let mouseDown = false
 
 window.onmousedown = (e) => {
+  context.moveTo(x, y)
   mouseDown = true
 }
 
